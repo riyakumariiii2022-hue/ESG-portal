@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Voice & Language | ESG Truth Engine</title>
+
+    <link rel="stylesheet" href="voice-language.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">ESG TRUTH ENGINE</p>
+                <h1>Voice & Language Support</h1>
+                <p class="subtitle">
+                    Listen to ESG information and explore voice-based interaction.
+                </p>
+            </div>
+
+            <button class="back-btn" onclick="goBack()">
+                ← Back to Dashboard
+            </button>
+        </header>
+
+        <div class="notice">
+            <strong>Prototype:</strong>
+            Speech and voice commands run through browser capabilities.
+            Speech recognition may not be available in every browser.
+            Translations are limited to the interface and sample commands.
+        </div>
+
+        <!-- LANGUAGE SELECTION -->
+
+        <section class="panel">
+            <h2>🌐 Choose Your Language</h2>
+
+            <p class="description">
+                Select the language for speech output and supported voice input.
+            </p>
+
+            <div class="language-row">
+                <div class="form-group">
+                    <label for="languageSelect">Language</label>
+
+                    <select id="languageSelect">
+                        <option value="en-IN">English (India)</option>
+                        <option value="hi-IN">Hindi</option>
+                        <option value="or-IN">Odia</option>
+                        <option value="bn-IN">Bengali</option>
+                        <option value="ta-IN">Tamil</option>
+                        <option value="te-IN">Telugu</option>
+                    </select>
+                </div>
+
+                <button class="primary-btn" id="applyLanguage">
+                    Apply Language
+                </button>
+            </div>
+
+            <p id="languageMessage" class="helper-text">
+                Current language: English (India)
+            </p>
+        </section>
+
+        <!-- SPEECH OUTPUT -->
+
+        <section class="panel">
+            <h2>🔊 Listen to ESG Information</h2>
+
+            <p class="description">
+                Enter text or generate a summary from your saved company data.
+            </p>
+
+            <label for="speechText">Text to Read</label>
+
+            <textarea
+                id="speechText"
+                rows="5"
+                placeholder="Enter the ESG information you want to hear..."
+            ></textarea>
+
+            <div class="button-row">
+                <button class="primary-btn" id="readButton">
+                    ▶ Read Aloud
+                </button>
+
+                <button class="secondary-btn" id="stopButton">
+                    ■ Stop
+                </button>
+
+                <button class="secondary-btn" id="summaryButton">
+                    Generate Company Summary
+                </button>
+            </div>
+
+            <p id="speechMessage" class="helper-text" aria-live="polite">
+                Ready to read.
+            </p>
+        </section>
+
+        <!-- VOICE INPUT -->
+
+        <section class="panel">
+            <h2>🎤 Voice Commands</h2>
+
+            <p class="description">
+                Try speaking a supported command, such as
+                "company summary", "energy", or "water".
+            </p>
+
+            <div class="voice-box">
+                <div class="microphone">🎙️</div>
+
+                <div>
+                    <h3 id="voiceStatus">Voice input is ready</h3>
+                    <p id="voiceDescription">
+                        Press the button and speak clearly.
+                    </p>
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button class="primary-btn" id="startListeningButton">
+                    Start Listening
+                </button>
+
+                <button class="secondary-btn" id="stopListeningButton">
+                    Stop Listening
+                </button>
+            </div>
+
+            <div class="transcript-box">
+                <span>Recognized text</span>
+                <p id="transcript">Your speech will appear here.</p>
+            </div>
+
+            <div class="command-help">
+                <h3>Supported demo commands</h3>
+                <ul>
+                    <li><strong>Company summary</strong> — reads a company overview.</li>
+                    <li><strong>Energy</strong> — reads the saved energy value.</li>
+                    <li><strong>Water</strong> — reads the saved water value.</li>
+                    <li><strong>Employees</strong> — reads the employee count.</li>
+                    <li><strong>Safety</strong> — reads the recorded safety value.</li>
+                </ul>
+                <p>
+                    These commands are matched against recognized words.
+                    They are not a full conversational AI assistant.
+                </p>
+            </div>
+        </section>
+
+        <!-- ACCESSIBILITY -->
+
+        <section class="panel accessibility-panel">
+            <h2>♿ Accessibility</h2>
+
+            <p>
+                Voice output can help users who prefer listening.
+                Keep text visible as well, and verify important ESG figures
+                against their original sources.
+            </p>
+        </section>
+
+        <footer>
+            ESG Truth Engine · Voice & Language Prototype
+        </footer>
+
+    </main>
+
+    <script src="voice-language.js"></script>
+</body>
+</html>

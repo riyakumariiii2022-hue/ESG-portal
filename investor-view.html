@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Investor ESG View | ESG Truth Engine</title>
+
+    <link rel="stylesheet" href="investor-view.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">ESG TRUTH ENGINE</p>
+                <h1>Investor ESG Overview</h1>
+                <p class="subtitle">
+                    A consolidated view of sustainability indicators and ESG risks.
+                </p>
+            </div>
+
+            <div class="header-actions">
+                <button class="secondary-btn" onclick="window.print()">
+                    Print / Save PDF
+                </button>
+
+                <button class="back-btn" onclick="goBack()">
+                    ← Dashboard
+                </button>
+            </div>
+        </header>
+
+        <!-- NOTICE -->
+
+        <div class="notice">
+            <strong>Prototype disclosure:</strong>
+            This page summarizes locally available demonstration data.
+            It is not an official ESG rating, investment recommendation,
+            audited report, or regulatory filing.
+        </div>
+
+        <!-- COMPANY INFORMATION -->
+
+        <section class="company-card">
+
+            <div>
+                <p class="small-label">COMPANY</p>
+                <h2 id="companyName">Company not entered</h2>
+                <p id="financialYear">Financial year not entered</p>
+            </div>
+
+            <div class="company-badge">
+                ESG PERFORMANCE SNAPSHOT
+            </div>
+
+        </section>
+
+        <!-- KEY INDICATORS -->
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Key Indicators</h2>
+                    <p>Selected indicators from the available company data.</p>
+                </div>
+            </div>
+
+            <div class="metric-grid">
+
+                <article class="metric-card">
+                    <div class="metric-icon">⚡</div>
+                    <p>Energy Consumption</p>
+                    <h3 id="energyValue">—</h3>
+                    <span>Unit as entered in company data</span>
+                </article>
+
+                <article class="metric-card">
+                    <div class="metric-icon">💧</div>
+                    <p>Water Consumption</p>
+                    <h3 id="waterValue">—</h3>
+                    <span>Unit as entered in company data</span>
+                </article>
+
+                <article class="metric-card">
+                    <div class="metric-icon">👥</div>
+                    <p>Employees</p>
+                    <h3 id="employeeValue">—</h3>
+                    <span>Reported workforce count</span>
+                </article>
+
+                <article class="metric-card">
+                    <div class="metric-icon">🦺</div>
+                    <p>Safety Incidents</p>
+                    <h3 id="safetyValue">—</h3>
+                    <span>Recorded incident count</span>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- ENVIRONMENTAL AND SOCIAL -->
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>ESG Performance Snapshot</h2>
+                    <p>
+                        A summary of available environmental, social,
+                        and governance information.
+                    </p>
+                </div>
+            </div>
+
+            <div class="performance-grid">
+
+                <article class="performance-card">
+                    <div class="performance-title">
+                        <span class="performance-icon">🌿</span>
+                        <h3>Environmental</h3>
+                    </div>
+
+                    <p>
+                        Tracks energy and water consumption recorded
+                        for the selected company.
+                    </p>
+
+                    <div class="detail-row">
+                        <span>Energy</span>
+                        <strong id="environmentEnergy">—</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Water</span>
+                        <strong id="environmentWater">—</strong>
+                    </div>
+
+                    <div class="availability">
+                        <span class="status-dot"></span>
+                        Data availability: <strong id="environmentStatus">—</strong>
+                    </div>
+                </article>
+
+                <article class="performance-card">
+                    <div class="performance-title">
+                        <span class="performance-icon">🤝</span>
+                        <h3>Social</h3>
+                    </div>
+
+                    <p>
+                        Displays the workforce and safety information
+                        currently available.
+                    </p>
+
+                    <div class="detail-row">
+                        <span>Employees</span>
+                        <strong id="socialEmployees">—</strong>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Safety incidents</span>
+                        <strong id="socialSafety">—</strong>
+                    </div>
+
+                    <div class="availability">
+                        <span class="status-dot"></span>
+                        Data availability: <strong id="socialStatus">—</strong>
+                    </div>
+                </article>
+
+                <article class="performance-card">
+                    <div class="performance-title">
+                        <span class="performance-icon">⚖️</span>
+                        <h3>Governance</h3>
+                    </div>
+
+                    <p>
+                        Governance information must be supplied and
+                        reviewed before a conclusion can be made.
+                    </p>
+
+                    <div class="detail-row">
+                        <span>Governance records</span>
+                        <strong id="governanceStatus">Not available</strong>
+                    </div>
+
+                    <div class="availability">
+                        <span class="status-dot pending-dot"></span>
+                        <strong>Requires additional data</strong>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- RISK SUMMARY -->
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>ESG Risk Summary</h2>
+                    <p>
+                        Summary of risks recorded in the Risk Heatmap module.
+                    </p>
+                </div>
+
+                <button class="secondary-btn" onclick="openRiskHeatmap()">
+                    View Risk Register →
+                </button>
+            </div>
+
+            <div class="risk-summary-grid">
+
+                <article class="risk-summary-card">
+                    <span>Total Recorded Risks</span>
+                    <h3 id="totalRiskCount">0</h3>
+                </article>
+
+                <article class="risk-summary-card risk-high">
+                    <span>High</span>
+                    <h3 id="highRiskCount">0</h3>
+                </article>
+
+                <article class="risk-summary-card risk-medium">
+                    <span>Medium</span>
+                    <h3 id="mediumRiskCount">0</h3>
+                </article>
+
+                <article class="risk-summary-card risk-low">
+                    <span>Low</span>
+                    <h3 id="lowRiskCount">0</h3>
+                </article>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Risk</th>
+                            <th>Category</th>
+                            <th>Score</th>
+                            <th>Level</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="riskTableBody"></tbody>
+                </table>
+
+            </div>
+
+            <p id="noRisksMessage" class="empty-message">
+                No risks have been recorded yet.
+            </p>
+
+        </section>
+
+        <!-- DATA TRANSPARENCY -->
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Data Transparency</h2>
+                    <p>
+                        Understand the limitations of the current information.
+                    </p>
+                </div>
+            </div>
+
+            <div class="transparency-grid">
+
+                <article class="transparency-card">
+                    <span>01</span>
+                    <h3>Data Source</h3>
+                    <p>
+                        Company indicators are read from locally stored
+                        prototype data.
+                    </p>
+                </article>
+
+                <article class="transparency-card">
+                    <span>02</span>
+                    <h3>Verification</h3>
+                    <p>
+                        Displayed values have not been independently audited
+                        or verified by this page.
+                    </p>
+                </article>
+
+                <article class="transparency-card">
+                    <span>03</span>
+                    <h3>Missing Information</h3>
+                    <p>
+                        Governance records, source documents, and other
+                        missing indicators require additional input.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <footer>
+            ESG Truth Engine · Investor View · Prototype
+        </footer>
+
+    </div>
+
+    <script src="investor-view.js"></script>
+
+</body>
+</html>

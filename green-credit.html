@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Green Credit Tracker | BRSR Intelligence</title>
+
+    <link rel="stylesheet" href="green-credit.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header class="page-header">
+        <button class="back-btn" onclick="goBack()">
+            ← Back to Dashboard
+        </button>
+
+        <h1>💳 Green Credit Tracker</h1>
+
+        <p>
+            Record environmental activities and monitor their
+            progress through assessment and verification.
+        </p>
+    </header>
+
+    <div class="notice">
+        <strong>Prototype notice:</strong>
+        This tracker records activities and provides illustrative
+        estimates only. It does not issue official green credits.
+        Eligibility, credit calculations, and verification depend
+        on the applicable official methodology.
+    </div>
+
+    <section class="card">
+        <h2>Register Environmental Activity</h2>
+
+        <form id="creditForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="activityName">Activity Name</label>
+                    <input
+                        type="text"
+                        id="activityName"
+                        placeholder="e.g. Campus tree plantation"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="activityType">Activity Type</label>
+                    <select id="activityType" required>
+                        <option value="">Select activity</option>
+                        <option value="Tree Plantation">Tree Plantation</option>
+                        <option value="Water Conservation">Water Conservation</option>
+                        <option value="Waste Management">Waste Management</option>
+                        <option value="Mangrove Conservation">Mangrove Conservation</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Activity Quantity</label>
+                    <input
+                        type="number"
+                        id="quantity"
+                        min="0.01"
+                        step="any"
+                        placeholder="Enter quantity"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="unit">Unit</label>
+                    <select id="unit" required>
+                        <option value="">Select unit</option>
+                        <option value="trees">Trees planted</option>
+                        <option value="litres">Litres of water conserved</option>
+                        <option value="kg">Kilograms of waste managed</option>
+                        <option value="hectares">Hectares restored</option>
+                        <option value="other units">Other units</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="activityDate">Activity Date</label>
+                    <input
+                        type="date"
+                        id="activityDate"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="investment">Investment (₹)</label>
+                    <input
+                        type="number"
+                        id="investment"
+                        min="0"
+                        step="any"
+                        value="0"
+                        required
+                    >
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="description">Activity Description</label>
+                    <textarea
+                        id="description"
+                        rows="3"
+                        placeholder="Describe the activity and supporting evidence..."
+                    ></textarea>
+                </div>
+
+            </div>
+
+            <button type="submit" class="primary-btn">
+                + Register Activity
+            </button>
+
+        </form>
+    </section>
+
+    <section class="summary-grid">
+
+        <div class="summary-card">
+            <span>Total Activities</span>
+            <h2 id="totalActivities">0</h2>
+        </div>
+
+        <div class="summary-card">
+            <span>Pending Verification</span>
+            <h2 id="pendingActivities">0</h2>
+        </div>
+
+        <div class="summary-card">
+            <span>Total Investment</span>
+            <h2 id="totalInvestment">₹0</h2>
+        </div>
+
+    </section>
+
+    <section class="card">
+        <h2>Environmental Activity Register</h2>
+
+        <input
+            type="search"
+            id="searchActivity"
+            placeholder="Search activities..."
+            aria-label="Search activities"
+        >
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Type</th>
+                        <th>Quantity</th>
+                        <th>Date</th>
+                        <th>Investment</th>
+                        <th>Estimated Credits</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="activityTable">
+                    <tr>
+                        <td colspan="8">No activities registered yet.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button id="exportBtn" class="secondary-btn">
+            Export Activities to CSV
+        </button>
+    </section>
+
+</div>
+
+<script src="green-credit.js"></script>
+
+</body>
+</html>

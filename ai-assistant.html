@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI BRSR Assistant | BRSR Intelligence</title>
+    <link rel="stylesheet" href="ai-assistant.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <button onclick="goBack()">← Back to Dashboard</button>
+            <h1>🤖 AI BRSR Assistant</h1>
+            <p>Your assistant for understanding ESG and BRSR reporting.</p>
+        </header>
+
+        <main class="chat-box">
+            <div id="chatMessages" class="messages">
+                <div class="message bot">
+                    Hello! 👋 I am your AI BRSR Assistant.
+                    Ask me a question about ESG or BRSR reporting.
+                </div>
+            </div>
+
+            <form id="chatForm">
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Ask about ESG, BRSR, or sustainability..."
+                    required
+                >
+                <button type="submit">Send</button>
+            </form>
+
+            <p class="note">
+                Demo mode: answers are predefined examples, not official regulatory advice.
+            </p>
+        </main>
+    </div>
+
+    <script src="ai-assistant.js"></script>
+</body>
+</html>

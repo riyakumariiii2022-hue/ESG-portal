@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Value Chain ESG | BRSR Intelligence</title>
+    <link rel="stylesheet" href="value-chain.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header class="page-header">
+        <button class="back-btn" onclick="goBack()">
+            ← Back to Dashboard
+        </button>
+
+        <h1>🔗 Value Chain ESG</h1>
+        <p>Monitor suppliers and identify potential ESG risks.</p>
+    </header>
+
+    <section class="notice">
+        <strong>Prototype notice:</strong>
+        Risk classifications are based on the rules in this demo.
+        They are not verified supplier audits or official ESG ratings.
+    </section>
+
+    <section class="card">
+        <h2>Add Supplier</h2>
+
+        <form id="supplierForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="supplierName">Supplier Name</label>
+                    <input type="text" id="supplierName" required
+                           placeholder="Enter supplier name">
+                </div>
+
+                <div class="form-group">
+                    <label for="industry">Industry</label>
+                    <select id="industry" required>
+                        <option value="">Select industry</option>
+                        <option value="Manufacturing">Manufacturing</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Construction">Construction</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Agriculture">Agriculture</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="environmental">Environmental Risk</label>
+                    <select id="environmental" required>
+                        <option value="">Select risk</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="social">Social Risk</label>
+                    <select id="social" required>
+                        <option value="">Select risk</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="governance">Governance Risk</label>
+                    <select id="governance" required>
+                        <option value="">Select risk</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="assessment">Assessment Status</label>
+                    <select id="assessment" required>
+                        <option value="Pending">Pending</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button type="submit" class="primary-btn">
+                + Add Supplier
+            </button>
+
+        </form>
+    </section>
+
+    <section class="summary-grid">
+
+        <div class="summary-card">
+            <span>Total Suppliers</span>
+            <h2 id="totalSuppliers">0</h2>
+        </div>
+
+        <div class="summary-card">
+            <span>High-Risk Suppliers</span>
+            <h2 id="highRiskSuppliers">0</h2>
+        </div>
+
+        <div class="summary-card">
+            <span>Assessments Pending</span>
+            <h2 id="pendingAssessments">0</h2>
+        </div>
+
+    </section>
+
+    <section class="card">
+        <div class="table-heading">
+            <h2>Supplier Register</h2>
+
+            <input
+                type="search"
+                id="searchSupplier"
+                placeholder="Search suppliers..."
+                aria-label="Search suppliers"
+            >
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Supplier</th>
+                        <th>Industry</th>
+                        <th>Environmental</th>
+                        <th>Social</th>
+                        <th>Governance</th>
+                        <th>Overall Risk</th>
+                        <th>Assessment</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="supplierTable">
+                    <tr>
+                        <td colspan="8">No suppliers added yet.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button class="secondary-btn" id="exportBtn">
+            Export Supplier Data (CSV)
+        </button>
+    </section>
+
+</div>
+
+<script src="value-chain.js"></script>
+
+</body>
+</html>

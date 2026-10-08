@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | ESG Truth Engine</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+<div class="register-container">
+
+    <div class="register-card">
+
+        <div class="logo">🌿 ESG Truth Engine</div>
+
+        <p class="tagline">JOIN THE SUSTAINABILITY MOVEMENT</p>
+
+        <h1>Create your account</h1>
+
+        <p class="subtitle">
+            Register to access your ESG dashboard.
+        </p>
+
+        <form id="registerForm">
+
+            <label for="fullName">Full Name</label>
+            <input
+                type="text"
+                id="fullName"
+                placeholder="Enter your full name"
+                required
+            >
+
+            <label for="company">Company Name</label>
+            <input
+                type="text"
+                id="company"
+                placeholder="Enter your company name"
+                required
+            >
+
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="you@company.com"
+                required
+            >
+
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Create a password"
+                minlength="8"
+                required
+            >
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Enter your password again"
+                minlength="8"
+                required
+            >
+
+            <button type="submit">Create Account →</button>
+
+            <p id="message"></p>
+
+        </form>
+
+        <p class="login-link">
+            Already have an account?
+            <a href="login.html">Sign in</a>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="register.js"></script>
+
+</body>
+</html>

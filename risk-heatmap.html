@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ESG Risk Heatmap</title>
+
+    <link rel="stylesheet" href="risk-heatmap.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">ESG TRUTH ENGINE</p>
+                <h1>Risk Heatmap</h1>
+                <p class="subtitle">
+                    Identify, evaluate and prioritize ESG risks.
+                </p>
+            </div>
+
+            <button class="back-btn" onclick="goBack()">
+                ← Back to Dashboard
+            </button>
+        </header>
+
+        <div class="notice">
+            <strong>Prototype scoring:</strong>
+            Risk scores are calculated using likelihood × impact.
+            They are for demonstration and are not official SEBI ratings
+            or regulatory assessments.
+        </div>
+
+        <!-- SUMMARY CARDS -->
+
+        <section class="summary-grid">
+
+            <div class="summary-card">
+                <span>Total Risks</span>
+                <h2 id="totalRisks">0</h2>
+                <p>Recorded risks</p>
+            </div>
+
+            <div class="summary-card high-card">
+                <span>High Risks</span>
+                <h2 id="highRisks">0</h2>
+                <p>Require priority review</p>
+            </div>
+
+            <div class="summary-card medium-card">
+                <span>Medium Risks</span>
+                <h2 id="mediumRisks">0</h2>
+                <p>Require monitoring</p>
+            </div>
+
+            <div class="summary-card low-card">
+                <span>Low Risks</span>
+                <h2 id="lowRisks">0</h2>
+                <p>Continue monitoring</p>
+            </div>
+
+        </section>
+
+        <!-- RISK FORM -->
+
+        <section class="panel">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Add a Risk</h2>
+                    <p>Record an ESG issue and its possible impact.</p>
+                </div>
+            </div>
+
+            <form id="riskForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group full-width">
+                        <label for="riskTitle">Risk Title *</label>
+
+                        <input
+                            type="text"
+                            id="riskTitle"
+                            placeholder="Example: Excessive water consumption"
+                            required
+                            maxlength="120"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="riskCategory">ESG Category *</label>
+
+                        <select id="riskCategory" required>
+                            <option value="Environmental">
+                                Environmental
+                            </option>
+
+                            <option value="Social">
+                                Social
+                            </option>
+
+                            <option value="Governance">
+                                Governance
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="riskStatus">Status *</label>
+
+                        <select id="riskStatus" required>
+                            <option value="Open">Open</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Mitigated">Mitigated</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="likelihood">Likelihood (1–5) *</label>
+
+                        <select id="likelihood" required>
+                            <option value="1">1 - Very Unlikely</option>
+                            <option value="2">2 - Unlikely</option>
+                            <option value="3" selected>3 - Possible</option>
+                            <option value="4">4 - Likely</option>
+                            <option value="5">5 - Very Likely</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="impact">Impact (1–5) *</label>
+
+                        <select id="impact" required>
+                            <option value="1">1 - Very Low</option>
+                            <option value="2">2 - Low</option>
+                            <option value="3" selected>3 - Moderate</option>
+                            <option value="4">4 - High</option>
+                            <option value="5">5 - Very High</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="mitigation">Mitigation Plan</label>
+
+                        <textarea
+                            id="mitigation"
+                            rows="3"
+                            maxlength="1000"
+                            placeholder="What action can reduce this risk?"
+                        ></textarea>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    + Add Risk
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- HEATMAP -->
+
+        <section class="panel">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Risk Heatmap</h2>
+                    <p>
+                        Compare likelihood and impact to identify
+                        priority areas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="heatmap-layout">
+
+                <div class="axis-label">
+                    IMPACT ↑
+                </div>
+
+                <div class="heatmap-area">
+
+                    <div class="heatmap-grid" id="heatmapGrid">
+                    </div>
+
+                    <div class="x-axis">
+                        LIKELIHOOD →
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="legend">
+                <span><i class="dot low-dot"></i> Low: 1–5</span>
+                <span><i class="dot medium-dot"></i> Medium: 6–14</span>
+                <span><i class="dot high-dot"></i> High: 15–25</span>
+            </div>
+
+            <p class="helper-text">
+                Each cell shows how many recorded risks have that
+                likelihood and impact combination. Click a cell to
+                filter the risk register.
+            </p>
+
+        </section>
+
+        <!-- RISK REGISTER -->
+
+        <section class="panel">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Risk Register</h2>
+                    <p>Review and manage recorded ESG risks.</p>
+                </div>
+
+                <button
+                    class="secondary-btn"
+                    onclick="exportRisks()"
+                    type="button"
+                >
+                    ↓ Export CSV
+                </button>
+            </div>
+
+            <div class="filters">
+
+                <input
+                    type="search"
+                    id="searchRisk"
+                    placeholder="Search risks..."
+                >
+
+                <select id="categoryFilter">
+                    <option value="All">All Categories</option>
+                    <option value="Environmental">Environmental</option>
+                    <option value="Social">Social</option>
+                    <option value="Governance">Governance</option>
+                </select>
+
+                <select id="levelFilter">
+                    <option value="All">All Risk Levels</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
+                <select id="statusFilter">
+                    <option value="All">All Statuses</option>
+                    <option value="Open">Open</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Mitigated">Mitigated</option>
+                </select>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Risk</th>
+                            <th>Category</th>
+                            <th>Likelihood</th>
+                            <th>Impact</th>
+                            <th>Score</th>
+                            <th>Level</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="riskTableBody"></tbody>
+
+                </table>
+
+            </div>
+
+            <p id="emptyMessage" class="empty-message">
+                No risks recorded yet. Add your first risk above.
+            </p>
+
+        </section>
+
+        <footer>
+            ESG Truth Engine · Risk Assessment Prototype
+        </footer>
+
+    </div>
+
+    <script src="risk-heatmap.js"></script>
+
+</body>
+</html>

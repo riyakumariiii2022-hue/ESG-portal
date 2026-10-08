@@ -2,17 +2,13 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>BRSR Intelligence Dashboard</title>
 
     <link rel="stylesheet" href="dashboard.css">
-
 </head>
-
 
 <body>
 
@@ -21,103 +17,98 @@
     <aside class="sidebar">
 
         <div class="logo">
-
             <h2>BRSR</h2>
-
             <span>INTELLIGENCE</span>
-
         </div>
-
 
         <nav>
 
-            <button class="nav-item active">
+            <button class="nav-item active"
+                onclick="window.location.href='dashboard.html'">
                 🏠 Dashboard
             </button>
 
-            <button class="nav-item">
+            <button class="nav-item"
+                onclick="openKPI()">
                 🧮 KPI Calculator
             </button>
 
-            <button class="nav-item">
-                🤖 AI BRSR Assistant
-            </button>
+            <button class="nav-item"
+            onclick="window.location.href='ai-assistant.html'">
+            🤖 AI BRSR Assistant
+            </button>  
 
-            <button class="nav-item">
+            <button class="nav-item"
+                onclick="openESGScore()">
                 📊 ESG Score
             </button>
 
-            <button class="nav-item">
+            <button class="nav-item"
+                onclick="window.location.href='carbon.html'">
                 🌱 Carbon Footprint
             </button>
 
-            <button class="nav-item">
+            <button class="nav-item"
+                onclick="window.location.href='year-comparison.html'">
                 📈 Year-to-Year
             </button>
 
-            <button class="nav-item">
+            <button class="nav-item"
+                onclick="window.location.href='value-chain.html'">
                 🔗 Value Chain ESG
             </button>
 
-            <button class="nav-item">
+            <button class="nav-item"
+                onclick="window.location.href='green-credit.html'">
                 💳 Green Credit
             </button>
 
-            <button class="nav-item">
+            <button class="nav-item"
+                onclick="window.location.href='risk-heatmap.html'">
                 ⚠️ Risk Heatmap
             </button>
 
-            <button class="nav-item">
+            <button class="nav-item"
+                onclick="window.location.href='investor-view.html'">
                 💼 Investor View
             </button>
 
-            <button class="nav-item">
+            <button class="nav-item"
+                onclick="window.location.href='voice-language.html'">
                 🎙️ Voice & Language
             </button>
 
         </nav>
 
-
         <div class="database-status">
-
             <span class="status-dot"></span>
-
             Database Connected
-
         </div>
 
     </aside>
-
 
 
     <!-- MAIN CONTENT -->
 
     <main class="main-content">
 
-
         <!-- TOP BAR -->
 
         <header class="topbar">
 
             <div>
-
                 <h1>ESG Intelligence Dashboard</h1>
 
                 <p>
                     BRSR reporting, analysis and verification
                 </p>
-
             </div>
 
-
             <button class="edit-button" onclick="goBack()">
-
                 ✏️ Edit Data
-
             </button>
 
         </header>
-
 
 
         <!-- COMPANY INFORMATION -->
@@ -125,48 +116,31 @@
         <section class="company-card">
 
             <div>
-
-                <span class="label">
-                    COMPANY
-                </span>
+                <span class="label">COMPANY</span>
 
                 <h2 id="companyName">
                     Company Name
                 </h2>
-
             </div>
 
-
             <div>
+                <span class="label">FINANCIAL YEAR</span>
 
-                <span class="label">
-                    FINANCIAL YEAR
-                </span>
-
-                <h3 id="financialYear">
-                    —
-                </h3>
-
+                <h3 id="financialYear">—</h3>
             </div>
 
-
             <div>
-
-                <span class="label">
-                    REPORT STATUS
-                </span>
+                <span class="label">REPORT STATUS</span>
 
                 <h3 class="verified">
                     ● Data Collected
                 </h3>
-
             </div>
 
         </section>
 
 
-
-        <!-- KEY METRICS -->
+        <!-- ESG OVERVIEW -->
 
         <section>
 
@@ -174,85 +148,59 @@
                 ESG Overview
             </h2>
 
-
             <div class="metric-grid">
-
 
                 <div class="metric-card">
 
-                    <div class="metric-icon">
-                        ⚡
-                    </div>
+                    <div class="metric-icon">⚡</div>
 
                     <p>Energy Consumption</p>
 
-                    <h2 id="energy">
-                        —
-                    </h2>
+                    <h2 id="energy">—</h2>
 
                     <span>kWh</span>
 
                 </div>
 
-
-
                 <div class="metric-card">
 
-                    <div class="metric-icon">
-                        💧
-                    </div>
+                    <div class="metric-icon">💧</div>
 
                     <p>Water Consumption</p>
 
-                    <h2 id="water">
-                        —
-                    </h2>
+                    <h2 id="water">—</h2>
 
                     <span>Litres</span>
 
                 </div>
 
-
-
                 <div class="metric-card">
 
-                    <div class="metric-icon">
-                        👥
-                    </div>
+                    <div class="metric-icon">👥</div>
 
                     <p>Total Employees</p>
 
-                    <h2 id="employees">
-                        —
-                    </h2>
+                    <h2 id="employees">—</h2>
 
                     <span>Employees</span>
 
                 </div>
 
-
-
                 <div class="metric-card">
 
-                    <div class="metric-icon">
-                        🛡️
-                    </div>
+                    <div class="metric-icon">🛡️</div>
 
                     <p>Safety Incidents</p>
 
-                    <h2 id="safety">
-                        —
-                    </h2>
+                    <h2 id="safety">—</h2>
 
                     <span>Incidents</span>
 
                 </div>
 
-
             </div>
 
         </section>
-
 
 
         <!-- INTELLIGENCE MODULES -->
@@ -263,35 +211,32 @@
                 ESG Intelligence Modules
             </h2>
 
-
             <div class="module-grid">
 
+                <!-- KPI CALCULATOR -->
 
                 <div class="module-card">
 
-    <div class="module-icon">
-        🧮
-    </div>
+                    <div class="module-icon">🧮</div>
 
-    <h3>KPI Calculator</h3>
+                    <h3>KPI Calculator</h3>
 
-    <p>
-        Calculate important ESG and BRSR indicators automatically.
-    </p>
+                    <p>
+                        Calculate important ESG and BRSR indicators automatically.
+                    </p>
 
-    <button onclick="openKPI()">
-        Open Module →
-    </button>
+                    <button onclick="openKPI()">
+                        Open Module →
+                    </button>
 
-</div>
+                </div>
 
 
+                <!-- AI BRSR ASSISTANT -->
 
                 <div class="module-card">
 
-                    <div class="module-icon">
-                        🤖
-                    </div>
+                    <div class="module-icon">🤖</div>
 
                     <h3>AI-Powered BRSR Assistant</h3>
 
@@ -299,19 +244,18 @@
                         Get intelligent assistance for ESG data and BRSR reporting.
                     </p>
 
-                    <button>
+                    <button onclick="showComingSoon('AI BRSR Assistant')">
                         Open Assistant →
                     </button>
 
                 </div>
 
 
+                <!-- ESG SCORE -->
 
                 <div class="module-card">
 
-                    <div class="module-icon">
-                        📊
-                    </div>
+                    <div class="module-icon">📊</div>
 
                     <h3>Automatic ESG Score</h3>
 
@@ -319,19 +263,18 @@
                         Calculate an ESG performance score from collected data.
                     </p>
 
-                    <button>
+                    <button onclick="openESGScore()">
                         View Score →
                     </button>
 
                 </div>
 
 
+                <!-- CARBON FOOTPRINT -->
 
                 <div class="module-card">
 
-                    <div class="module-icon">
-                        🌱
-                    </div>
+                    <div class="module-icon">🌱</div>
 
                     <h3>Carbon Footprint Calculator</h3>
 
@@ -339,19 +282,18 @@
                         Estimate carbon emissions from energy and operational data.
                     </p>
 
-                    <button>
+                    <button onclick="showComingSoon('Carbon Footprint Calculator')">
                         Calculate →
                     </button>
 
                 </div>
 
 
+                <!-- YEAR TO YEAR -->
 
                 <div class="module-card">
 
-                    <div class="module-icon">
-                        📈
-                    </div>
+                    <div class="module-icon">📈</div>
 
                     <h3>Year-to-Year Comparison</h3>
 
@@ -359,19 +301,18 @@
                         Compare ESG performance across financial years.
                     </p>
 
-                    <button>
+                    <button onclick="showComingSoon('Year-to-Year Comparison')">
                         Compare →
                     </button>
 
                 </div>
 
 
+                <!-- VALUE CHAIN -->
 
                 <div class="module-card">
 
-                    <div class="module-icon">
-                        🔗
-                    </div>
+                    <div class="module-icon">🔗</div>
 
                     <h3>Value-Chain ESG Module</h3>
 
@@ -379,19 +320,18 @@
                         Track ESG data and sustainability performance of suppliers.
                     </p>
 
-                    <button>
+                    <button onclick="showComingSoon('Value Chain ESG')">
                         Open Value Chain →
                     </button>
 
                 </div>
 
 
+                <!-- GREEN CREDIT -->
 
                 <div class="module-card">
 
-                    <div class="module-icon">
-                        💳
-                    </div>
+                    <div class="module-icon">💳</div>
 
                     <h3>Green Credit Tracker</h3>
 
@@ -399,19 +339,18 @@
                         Track green initiatives and associated green credits.
                     </p>
 
-                    <button>
+                    <button onclick="showComingSoon('Green Credit Tracker')">
                         Track Credits →
                     </button>
 
                 </div>
 
 
+                <!-- RISK HEATMAP -->
 
                 <div class="module-card">
 
-                    <div class="module-icon">
-                        ⚠️
-                    </div>
+                    <div class="module-icon">⚠️</div>
 
                     <h3>ESG Risk Heatmap</h3>
 
@@ -419,19 +358,18 @@
                         Identify environmental, social and governance risk areas.
                     </p>
 
-                    <button>
+                    <button onclick="showComingSoon('ESG Risk Heatmap')">
                         View Heatmap →
                     </button>
 
                 </div>
 
 
+                <!-- INVESTOR VIEW -->
 
                 <div class="module-card">
 
-                    <div class="module-icon">
-                        💼
-                    </div>
+                    <div class="module-icon">💼</div>
 
                     <h3>Investor View</h3>
 
@@ -439,19 +377,18 @@
                         Present ESG performance in an investor-friendly format.
                     </p>
 
-                    <button>
+                    <button onclick="showComingSoon('Investor View')">
                         Investor View →
                     </button>
 
                 </div>
 
 
+                <!-- VOICE AND REGIONAL SUPPORT -->
 
                 <div class="module-card">
 
-                    <div class="module-icon">
-                        🎙️
-                    </div>
+                    <div class="module-icon">🎙️</div>
 
                     <h3>Voice & Regional Support</h3>
 
@@ -459,17 +396,15 @@
                         Access the platform using voice and regional languages.
                     </p>
 
-                    <button>
+                    <button onclick="showComingSoon('Voice and Regional Support')">
                         Open Support →
                     </button>
 
                 </div>
 
-
             </div>
 
         </section>
-
 
 
         <!-- DATABASE -->
@@ -477,32 +412,28 @@
         <section class="database-card">
 
             <div>
-
                 <h2>🗄️ ESG Database</h2>
 
                 <p>
                     Centralized storage for company ESG data,
                     reports, evidence and historical records.
                 </p>
-
             </div>
-
 
             <div class="database-info">
 
                 <strong>Database Status</strong>
 
-                <span>
-                    ● Connected
-                </span>
+                <span>● Connected</span>
 
             </div>
 
         </section>
 
-
     </main>
 
+
+    <!-- JAVASCRIPT -->
 
     <script src="dashboard.js"></script>
 

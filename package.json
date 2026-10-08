@@ -1,0 +1,27 @@
+{
+  "name": "bbsr-intelligence",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ai-assistant.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riyakumariiii2022-hue/ESG-portal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/riyakumariiii2022-hue/ESG-portal/issues"
+  },
+  "homepage": "https://github.com/riyakumariiii2022-hue/ESG-portal#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.0.3",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0"
+  }
+}
