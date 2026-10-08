@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contradiction Radar</title>
+
+    <link rel="stylesheet" href="contradiction.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <div>
+                <h1>Contradiction Radar</h1>
+                <p>Compare ESG data from different sources</p>
+            </div>
+
+            <button onclick="goDashboard()">
+                ← Dashboard
+            </button>
+        </header>
+
+
+        <div class="card">
+
+            <h2>Check Data Consistency</h2>
+
+            <p class="description">
+                Enter the same ESG metric from different company sources.
+                The system will identify whether the values match.
+            </p>
+
+
+            <div class="form-group">
+
+                <label>ESG Metric</label>
+
+                <select id="metric">
+
+                    <option value="Employee Count">
+                        Employee Count
+                    </option>
+
+                    <option value="Water Consumption">
+                        Water Consumption
+                    </option>
+
+                    <option value="Energy Consumption">
+                        Energy Consumption
+                    </option>
+
+                    <option value="GHG Emissions">
+                        GHG Emissions
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <h3>Enter Values From Different Sources</h3>
+
+
+            <div class="source-grid">
+
+                <div class="source">
+
+                    <label>HR / Internal Report</label>
+
+                    <input
+                        type="number"
+                        id="source1"
+                        placeholder="Enter value"
+                    >
+
+                </div>
+
+
+                <div class="source">
+
+                    <label>Annual Report</label>
+
+                    <input
+                        type="number"
+                        id="source2"
+                        placeholder="Enter value"
+                    >
+
+                </div>
+
+
+                <div class="source">
+
+                    <label>BRSR Data</label>
+
+                    <input
+                        type="number"
+                        id="source3"
+                        placeholder="Enter value"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button class="analyze-btn" onclick="checkContradiction()">
+
+                Analyze Consistency
+
+            </button>
+
+
+            <!-- Result -->
+
+            <div id="result" class="result hidden">
+
+                <div id="resultIcon"></div>
+
+                <h2 id="resultTitle"></h2>
+
+                <p id="resultMessage"></p>
+
+                <div id="resultDetails"></div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="contradiction.js"></script>
+
+</body>
+
+</html>

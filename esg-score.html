@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Automatic ESG Score</title>
+
+    <link rel="stylesheet" href="esg-score.css">
+</head>
+
+<body>
+
+    <header class="score-header">
+
+        <div>
+            <h1>Automatic ESG Score</h1>
+            <p>AI-assisted ESG performance evaluation</p>
+        </div>
+
+        <button onclick="goDashboard()">
+            ← Dashboard
+        </button>
+
+    </header>
+
+
+    <main class="score-container">
+
+        <!-- COMPANY INFORMATION -->
+
+        <section class="company-info">
+
+            <h2 id="companyName">Company</h2>
+
+            <p>
+                Financial Year:
+                <strong id="financialYear">-</strong>
+            </p>
+
+        </section>
+
+
+        <!-- OVERALL SCORE -->
+
+        <section class="overall-score">
+
+            <h2>ESG Performance Score</h2>
+
+            <div class="score-circle">
+
+                <span id="overallScore">--</span>
+
+                <small>/ 100</small>
+
+            </div>
+
+            <h3 id="scoreStatus">
+                Calculating...
+            </h3>
+
+            <p id="scoreMessage">
+                Your ESG performance score will be calculated from the submitted company data.
+            </p>
+
+        </section>
+
+
+        <!-- ESG BREAKDOWN -->
+
+        <section class="score-grid">
+
+            <!-- ENVIRONMENTAL -->
+
+            <div class="score-card">
+
+                <div class="card-icon">
+                    🌱
+                </div>
+
+                <h3>Environmental</h3>
+
+                <div class="category-score">
+                    <span id="environmentalScore">--</span>
+                    <small>/ 100</small>
+                </div>
+
+                <p>
+                    Energy, water, waste and emissions performance.
+                </p>
+
+            </div>
+
+
+            <!-- SOCIAL -->
+
+            <div class="score-card">
+
+                <div class="card-icon">
+                    👥
+                </div>
+
+                <h3>Social</h3>
+
+                <div class="category-score">
+                    <span id="socialScore">--</span>
+                    <small>/ 100</small>
+                </div>
+
+                <p>
+                    Employees, training, safety and gender indicators.
+                </p>
+
+            </div>
+
+
+            <!-- GOVERNANCE -->
+
+            <div class="score-card">
+
+                <div class="card-icon">
+                    🏛️
+                </div>
+
+                <h3>Governance</h3>
+
+                <div class="category-score">
+                    <span id="governanceScore">--</span>
+                    <small>/ 100</small>
+                </div>
+
+                <p>
+                    Complaints and ethics-related indicators.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCORE EXPLANATION -->
+
+        <section class="score-explanation">
+
+            <h2>How is the score calculated?</h2>
+
+            <p>
+                The prototype evaluates the available Environmental,
+                Social and Governance data and generates a normalized
+                performance score.
+            </p>
+
+            <div class="formula">
+
+                <strong>Overall ESG Score</strong>
+
+                <br><br>
+
+                Environmental × 40%
+                +
+                Social × 35%
+                +
+                Governance × 25%
+
+            </div>
+
+            <p class="note">
+                ⚠️ This is a prototype ESG performance score for
+                decision support. It is not an official SEBI rating
+                or BRSR score.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script src="esg-score.js"></script>
+
+</body>
+
+</html>

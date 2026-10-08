@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KPI Calculator | BRSR Intelligence</title>
+
+    <link rel="stylesheet" href="kpi.css">
+
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div>
+
+            <h1>KPI Calculator</h1>
+
+            <p>
+                Calculate important ESG performance indicators
+            </p>
+
+        </div>
+
+
+        <button onclick="goDashboard()">
+            ← Dashboard
+        </button>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="container">
+
+
+        <!-- COMPANY -->
+
+        <section class="company-info">
+
+            <h2 id="companyName">
+                Company
+            </h2>
+
+            <p>
+                Financial Year:
+                <strong id="financialYear">—</strong>
+            </p>
+
+        </section>
+
+
+
+        <!-- KPI CARDS -->
+
+        <section>
+
+            <h2 class="section-title">
+                ESG Key Performance Indicators
+            </h2>
+
+
+            <div class="kpi-grid">
+
+
+                <!-- FEMALE EMPLOYEE -->
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon">
+                        👩‍💼
+                    </div>
+
+                    <h3>
+                        Female Employee %
+                    </h3>
+
+                    <p>
+                        Percentage of employees who are female.
+                    </p>
+
+                    <div class="result">
+
+                        <span id="femalePercentage">
+                            —
+                        </span>
+
+                        <small>%</small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TRAINING -->
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        Training Hours / Employee
+                    </h3>
+
+                    <p>
+                        Average training hours received per employee.
+                    </p>
+
+                    <div class="result">
+
+                        <span id="trainingPerEmployee">
+                            —
+                        </span>
+
+                        <small>hours</small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SAFETY RATE -->
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon">
+                        🛡️
+                    </div>
+
+                    <h3>
+                        Safety Incident Rate
+                    </h3>
+
+                    <p>
+                        Safety incidents per 100 employees.
+                    </p>
+
+                    <div class="result">
+
+                        <span id="safetyRate">
+                            —
+                        </span>
+
+                        <small>/100</small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- WATER PER EMPLOYEE -->
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon">
+                        💧
+                    </div>
+
+                    <h3>
+                        Water / Employee
+                    </h3>
+
+                    <p>
+                        Average water consumption per employee.
+                    </p>
+
+                    <div class="result">
+
+                        <span id="waterPerEmployee">
+                            —
+                        </span>
+
+                        <small>Litres</small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ENERGY PER EMPLOYEE -->
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Energy / Employee
+                    </h3>
+
+                    <p>
+                        Average energy consumption per employee.
+                    </p>
+
+                    <div class="result">
+
+                        <span id="energyPerEmployee">
+                            —
+                        </span>
+
+                        <small>kWh</small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- WASTE PER EMPLOYEE -->
+
+                <div class="kpi-card">
+
+                    <div class="kpi-icon">
+                        ♻️
+                    </div>
+
+                    <h3>
+                        Waste / Employee
+                    </h3>
+
+                    <p>
+                        Average waste generated per employee.
+                    </p>
+
+                    <div class="result">
+
+                        <span id="wastePerEmployee">
+                            —
+                        </span>
+
+                        <small>Tonnes</small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- EXPLANATION -->
+
+        <section class="info-box">
+
+            <h2>How are KPIs calculated?</h2>
+
+            <p>
+                The calculator uses the ESG data entered by the company
+                and automatically derives additional performance indicators.
+            </p>
+
+            <div class="formula">
+
+                <strong>Example:</strong>
+
+                Female Employee % =
+                (Female Employees ÷ Total Employees) × 100
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="kpi.js"></script>
+
+</body>
+
+</html>

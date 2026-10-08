@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BRSR Intelligence Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>BRSR</h2>
+
+            <span>INTELLIGENCE</span>
+
+        </div>
+
+
+        <nav>
+
+            <button class="nav-item active">
+                🏠 Dashboard
+            </button>
+
+            <button class="nav-item">
+                🧮 KPI Calculator
+            </button>
+
+            <button class="nav-item">
+                🤖 AI BRSR Assistant
+            </button>
+
+            <button class="nav-item">
+                📊 ESG Score
+            </button>
+
+            <button class="nav-item">
+                🌱 Carbon Footprint
+            </button>
+
+            <button class="nav-item">
+                📈 Year-to-Year
+            </button>
+
+            <button class="nav-item">
+                🔗 Value Chain ESG
+            </button>
+
+            <button class="nav-item">
+                💳 Green Credit
+            </button>
+
+            <button class="nav-item">
+                ⚠️ Risk Heatmap
+            </button>
+
+            <button class="nav-item">
+                💼 Investor View
+            </button>
+
+            <button class="nav-item">
+                🎙️ Voice & Language
+            </button>
+
+        </nav>
+
+
+        <div class="database-status">
+
+            <span class="status-dot"></span>
+
+            Database Connected
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>ESG Intelligence Dashboard</h1>
+
+                <p>
+                    BRSR reporting, analysis and verification
+                </p>
+
+            </div>
+
+
+            <button class="edit-button" onclick="goBack()">
+
+                ✏️ Edit Data
+
+            </button>
+
+        </header>
+
+
+
+        <!-- COMPANY INFORMATION -->
+
+        <section class="company-card">
+
+            <div>
+
+                <span class="label">
+                    COMPANY
+                </span>
+
+                <h2 id="companyName">
+                    Company Name
+                </h2>
+
+            </div>
+
+
+            <div>
+
+                <span class="label">
+                    FINANCIAL YEAR
+                </span>
+
+                <h3 id="financialYear">
+                    —
+                </h3>
+
+            </div>
+
+
+            <div>
+
+                <span class="label">
+                    REPORT STATUS
+                </span>
+
+                <h3 class="verified">
+                    ● Data Collected
+                </h3>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- KEY METRICS -->
+
+        <section>
+
+            <h2 class="section-title">
+                ESG Overview
+            </h2>
+
+
+            <div class="metric-grid">
+
+
+                <div class="metric-card">
+
+                    <div class="metric-icon">
+                        ⚡
+                    </div>
+
+                    <p>Energy Consumption</p>
+
+                    <h2 id="energy">
+                        —
+                    </h2>
+
+                    <span>kWh</span>
+
+                </div>
+
+
+
+                <div class="metric-card">
+
+                    <div class="metric-icon">
+                        💧
+                    </div>
+
+                    <p>Water Consumption</p>
+
+                    <h2 id="water">
+                        —
+                    </h2>
+
+                    <span>Litres</span>
+
+                </div>
+
+
+
+                <div class="metric-card">
+
+                    <div class="metric-icon">
+                        👥
+                    </div>
+
+                    <p>Total Employees</p>
+
+                    <h2 id="employees">
+                        —
+                    </h2>
+
+                    <span>Employees</span>
+
+                </div>
+
+
+
+                <div class="metric-card">
+
+                    <div class="metric-icon">
+                        🛡️
+                    </div>
+
+                    <p>Safety Incidents</p>
+
+                    <h2 id="safety">
+                        —
+                    </h2>
+
+                    <span>Incidents</span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- INTELLIGENCE MODULES -->
+
+        <section>
+
+            <h2 class="section-title">
+                ESG Intelligence Modules
+            </h2>
+
+
+            <div class="module-grid">
+
+
+                <div class="module-card">
+
+    <div class="module-icon">
+        🧮
+    </div>
+
+    <h3>KPI Calculator</h3>
+
+    <p>
+        Calculate important ESG and BRSR indicators automatically.
+    </p>
+
+    <button onclick="openKPI()">
+        Open Module →
+    </button>
+
+</div>
+
+
+
+                <div class="module-card">
+
+                    <div class="module-icon">
+                        🤖
+                    </div>
+
+                    <h3>AI-Powered BRSR Assistant</h3>
+
+                    <p>
+                        Get intelligent assistance for ESG data and BRSR reporting.
+                    </p>
+
+                    <button>
+                        Open Assistant →
+                    </button>
+
+                </div>
+
+
+
+                <div class="module-card">
+
+                    <div class="module-icon">
+                        📊
+                    </div>
+
+                    <h3>Automatic ESG Score</h3>
+
+                    <p>
+                        Calculate an ESG performance score from collected data.
+                    </p>
+
+                    <button>
+                        View Score →
+                    </button>
+
+                </div>
+
+
+
+                <div class="module-card">
+
+                    <div class="module-icon">
+                        🌱
+                    </div>
+
+                    <h3>Carbon Footprint Calculator</h3>
+
+                    <p>
+                        Estimate carbon emissions from energy and operational data.
+                    </p>
+
+                    <button>
+                        Calculate →
+                    </button>
+
+                </div>
+
+
+
+                <div class="module-card">
+
+                    <div class="module-icon">
+                        📈
+                    </div>
+
+                    <h3>Year-to-Year Comparison</h3>
+
+                    <p>
+                        Compare ESG performance across financial years.
+                    </p>
+
+                    <button>
+                        Compare →
+                    </button>
+
+                </div>
+
+
+
+                <div class="module-card">
+
+                    <div class="module-icon">
+                        🔗
+                    </div>
+
+                    <h3>Value-Chain ESG Module</h3>
+
+                    <p>
+                        Track ESG data and sustainability performance of suppliers.
+                    </p>
+
+                    <button>
+                        Open Value Chain →
+                    </button>
+
+                </div>
+
+
+
+                <div class="module-card">
+
+                    <div class="module-icon">
+                        💳
+                    </div>
+
+                    <h3>Green Credit Tracker</h3>
+
+                    <p>
+                        Track green initiatives and associated green credits.
+                    </p>
+
+                    <button>
+                        Track Credits →
+                    </button>
+
+                </div>
+
+
+
+                <div class="module-card">
+
+                    <div class="module-icon">
+                        ⚠️
+                    </div>
+
+                    <h3>ESG Risk Heatmap</h3>
+
+                    <p>
+                        Identify environmental, social and governance risk areas.
+                    </p>
+
+                    <button>
+                        View Heatmap →
+                    </button>
+
+                </div>
+
+
+
+                <div class="module-card">
+
+                    <div class="module-icon">
+                        💼
+                    </div>
+
+                    <h3>Investor View</h3>
+
+                    <p>
+                        Present ESG performance in an investor-friendly format.
+                    </p>
+
+                    <button>
+                        Investor View →
+                    </button>
+
+                </div>
+
+
+
+                <div class="module-card">
+
+                    <div class="module-icon">
+                        🎙️
+                    </div>
+
+                    <h3>Voice & Regional Support</h3>
+
+                    <p>
+                        Access the platform using voice and regional languages.
+                    </p>
+
+                    <button>
+                        Open Support →
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- DATABASE -->
+
+        <section class="database-card">
+
+            <div>
+
+                <h2>🗄️ ESG Database</h2>
+
+                <p>
+                    Centralized storage for company ESG data,
+                    reports, evidence and historical records.
+                </p>
+
+            </div>
+
+
+            <div class="database-info">
+
+                <strong>Database Status</strong>
+
+                <span>
+                    ● Connected
+                </span>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

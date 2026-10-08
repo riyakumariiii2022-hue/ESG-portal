@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BRSR Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>BRSR Intelligence</h1>
+            <p>Corporate ESG Data & Verification Platform</p>
+        </div>
+
+        <div class="card">
+
+            <h2>Enter Company ESG Data</h2>
+
+            <p class="description">
+                Enter your company's ESG information to analyze and prepare BRSR data.
+            </p>
+
+
+            <form id="esgForm">
+
+                <!-- Company Information -->
+
+                <h3>Company Information</h3>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Company Name</label>
+                        <input
+                            type="text"
+                            id="companyName"
+                            placeholder="Enter company name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Financial Year</label>
+
+                        <select id="financialYear" required>
+                            <option value="">Select Year</option>
+                            <option value="2025-26">2025-26</option>
+                            <option value="2026-27">2026-27</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Environmental Data -->
+
+                <h3>Environmental Data</h3>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Energy Consumption (kWh)</label>
+
+                        <input
+                            type="number"
+                            id="energy"
+                            placeholder="Example: 500000"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Water Consumption (Litres)</label>
+
+                        <input
+                            type="number"
+                            id="water"
+                            placeholder="Example: 1000000"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Waste Generated (Tonnes)</label>
+
+                        <input
+                            type="number"
+                            id="waste"
+                            placeholder="Example: 500"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>GHG Emissions (tCO₂e)</label>
+
+                        <input
+                            type="number"
+                            id="emissions"
+                            placeholder="Example: 2500"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <!-- Social Data -->
+
+                <h3>Social Data</h3>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Total Employees</label>
+
+                        <input
+                            type="number"
+                            id="employees"
+                            placeholder="Example: 5000"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Training Hours</label>
+
+                        <input
+                            type="number"
+                            id="training"
+                            placeholder="Example: 12000"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Safety Incidents</label>
+
+                        <input
+                            type="number"
+                            id="safety"
+                            placeholder="Example: 5"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Female Employees</label>
+
+                        <input
+                            type="number"
+                            id="femaleEmployees"
+                            placeholder="Example: 1200"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <!-- Governance -->
+
+                <h3>Governance Data</h3>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>Customer Complaints</label>
+
+                        <input
+                            type="number"
+                            id="complaints"
+                            placeholder="Example: 120"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Ethics Violations</label>
+
+                        <input
+                            type="number"
+                            id="violations"
+                            placeholder="Example: 2"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit">
+                    Analyze ESG Data
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
