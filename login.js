@@ -14,8 +14,8 @@ togglePassword.addEventListener("click", function () {
     }
 });
 
-// Login demonstration
-loginForm.addEventListener("submit", function (event) {
+// Real login using the backend
+loginForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const email = document.getElementById("email").value.trim();
@@ -27,20 +27,50 @@ loginForm.addEventListener("submit", function (event) {
         return;
     }
 
-    // This is a UI demonstration, not real authentication.
-    message.style.color = "#b56b00";
-    message.textContent =
-        "Login page is ready, but authentication is not configured yet.";
+    message.style.color = "#555";
+    message.textContent = "Logging in...";
+
+    try {
+        const response = await fetch("/api/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            credentials: "same-origin",
+            body: JSON.stringify({
+                email: email,
+                password: password
+            })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message || "Login failed.");
+        }
+
+        message.style.color = "green";
+        message.textContent = "Login successful! Opening dashboard...";
+
+        window.location.href = data.redirect || "/dashboard.html";
+
+    } catch (error) {
+        message.style.color = "#d93025";
+        message.textContent =
+            error.message === "Failed to fetch"
+                ? "Cannot connect to the server. Please start the backend."
+                : error.message;
+    }
 });
 
-// Forgot password demonstration
+// Forgot password
 document.getElementById("forgotPassword").addEventListener("click", function (event) {
     event.preventDefault();
-    alert("Password recovery will be available after backend setup.");
+    alert("Password recovery has not been implemented yet.");
 });
 
-// Signup demonstration
+// Signup
 document.getElementById("signupLink").addEventListener("click", function (event) {
     event.preventDefault();
-    window.location.href = "register.html";
+    window.location.href = "/register.html";
 });

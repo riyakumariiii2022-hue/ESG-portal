@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESG Report Analyzer | BBSR Intelligence</title>
+    <link rel="stylesheet" href="report-analyzer.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <h2>BBSR <span>Intelligence</span></h2>
+        <a href="dashboard.html">← Back to Dashboard</a>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <span class="badge">AI-READY DOCUMENT INTELLIGENCE</span>
+            <h1>ESG Report Analyzer</h1>
+            <p>Upload a company's BRSR or ESG report to extract its text for analysis.</p>
+        </section>
+
+        <section class="upload-card">
+            <div class="upload-icon">📄</div>
+
+            <h2>Upload your ESG report</h2>
+            <p>Select a PDF report from your computer.</p>
+
+            <form id="uploadForm">
+                <label for="pdfFile" class="drop-area">
+                    <span class="upload-symbol">⬆</span>
+                    <strong>Choose a PDF file</strong>
+                    <span id="fileName">PDF files only</span>
+                </label>
+
+                <input
+                    type="file"
+                    id="pdfFile"
+                    name="report"
+                    accept=".pdf,application/pdf"
+                    required
+                >
+
+                <button type="submit" id="uploadBtn">
+                    Upload & Extract Text
+                </button>
+            </form>
+
+            <p class="note">Maximum file size: 10 MB</p>
+        </section>
+
+        <section id="resultCard" class="result-card" hidden>
+            <h2>Extraction Results</h2>
+            <p id="resultMessage"></p>
+            <div class="stats">
+                <div>
+                    <span>Extracted characters</span>
+                    <strong id="charCount">0</strong>
+                </div>
+                <div>
+                    <span>Extracted words</span>
+                    <strong id="wordCount">0</strong>
+                </div>
+            </div>
+
+            <h3>Extracted PDF Text</h3>
+            <pre id="extractedText"></pre>
+        </section>
+
+        <p id="statusMessage" role="status"></p>
+    </main>
+
+    <script src="report-analyzer.js"></script>
+</body>
+</html>
