@@ -1,0 +1,31 @@
+/* Improve text visibility in both themes */
+
+body {
+    color: var(--text-color);
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body p,
+body label,
+body span,
+body td,
+body th {
+    color: var(--text-color);
+}
+
+body input,
+body select,
+body textarea {
+    background-color: var(--card-color);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+body input::placeholder,
+body textarea::placeholder {
+    color: var(--text-color);
+    opacity: 0.7;
+}
